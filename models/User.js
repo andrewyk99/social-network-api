@@ -20,7 +20,12 @@ const UserSchema = new Schema(
                 ref: 'Thought'
             }
         ],
-        // Place friends(array of _id values self-referncing User model)
+        friends: [
+            {
+                type: Schema.Types.ObjectId,
+                ref: 'User'
+            }
+        ]
     },
     {
         toJSON: {
