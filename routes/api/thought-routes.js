@@ -12,9 +12,9 @@ const {
 router.route('/').get(getAllThought);
 
 // Set up POST /api/thoughts/:userId
-router.route('/:userId').post(addThought);
+router.route('/').post(addThought);
 
-// Set up GET one and DELETE thought at /api/:thoughtId
+// Set up GET one and DELETE thought at /api/thoughts/:thoughtId
 router
     .route('/:thoughtId')
     .get(getThoughtById)
@@ -22,7 +22,7 @@ router
 
 // Set up POST and DELETE reaction at /api/thoughts/:thoughtId/reactions
 router
-    .route('/:thoughtId/:reactions')
+    .route('/:thoughtId/reactions')
     .post(addReaction)
     .delete(removeReaction);
 
