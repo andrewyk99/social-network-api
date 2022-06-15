@@ -3,6 +3,7 @@ const {
     getAllThought,
     getThoughtById,
     addThought,
+    updateThought,
     removeThought,
     addReaction,
     removeReaction
@@ -18,6 +19,7 @@ router.route('/').post(addThought);
 router
     .route('/:thoughtId')
     .get(getThoughtById)
+    .put(updateThought)
     .delete(removeThought);
 
 // Set up POST and DELETE reaction at /api/thoughts/:thoughtId/reactions
