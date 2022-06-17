@@ -64,8 +64,9 @@ const userController = {
                     return;
                 }
                 res.json(dbUserData);
-                return dbUserData.thoughts.forEach(e => {
+                dbUserData.thoughts.forEach(e => {
                     Thought.findOneAndDelete({ _id: e._id })
+                        .exec();
                 });
             })
             .catch(err => res.status(400).json(err));
